@@ -1,2 +1,3 @@
 # mern-full-app
-MERN full app
+MERN full login and register 
+
