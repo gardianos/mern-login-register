@@ -29,3 +29,7 @@ button{
 button:hover{
     background-color: lightcoral;
 }
+.resultMessage{
+    background-color: orange;
+    padding: 10px 20px;
+}

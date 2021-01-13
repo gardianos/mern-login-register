@@ -29,6 +29,10 @@ const Form = () => {
 					'Content-Type': 'application/json'
 				}
 			})
+			setUserDetails({
+				...userDetails,
+				message: response.data.message
+			})
 			console.log(response);
 		}
     return (
@@ -44,6 +48,10 @@ const Form = () => {
 							<input required type="email" id="userEmail" name="userEmail" onChange={formValues}/>
 							<br/>
 							<button type="submit">Register</button>
+							{userDetails.message 
+							? <h1 className="resultMessage">{userDetails.message}</h1>
+								: null
+						}
 						</form>
         </div>
     )
