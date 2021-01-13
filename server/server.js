@@ -25,7 +25,7 @@ const connectDB = async () => {
 
 connectDB()
 
-//Router
+//Routes
 app.post("/api/register", async (req, res) => {
 
     try {
@@ -41,8 +41,14 @@ app.post("/api/register", async (req, res) => {
     
 })
 
-app.get("/api/users", (req, res) => {
+app.get("/api/users", async (req, res) => {
+    try {
+        const users = await User.find()
 
+         res.json({users: users});
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 const Port = 5001;
